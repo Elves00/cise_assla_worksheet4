@@ -1,9 +1,9 @@
 import React from "react";
-import { Route, NavLink, BrowserRouter, Routes } from "react-router-dom";
+import { Redirect,Route, NavLink, BrowserRouter, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import SEPractice from "./pages/SE-Practice";
 import SubmitArticle from "./pages/Submit-Article";
-// import NotFoundPage from "./pages/404";
+import NotFoundPage from "./pages/404";
 
 const App = () => {
   return (
@@ -28,6 +28,9 @@ const App = () => {
           <Route  path='/' element={<Home/>} />
           <Route path='/SEPractice' element={<SEPractice/>} />
           <Route path='/SubmitArticle' element={<SubmitArticle/>} />
+          <Route exact path="/404" component={NotFoundPage}/>
+            <Redirect to="/404" />
+
           </Routes>
         </div>
       </div>
